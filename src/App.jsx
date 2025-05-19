@@ -25,11 +25,9 @@ function getPreparedGoods(goods, { sortField, reverse }) {
     case SORT_FIELD_ALPHABETICALLY:
       preparedGoods.sort((a, b) => a.localeCompare(b));
       break;
-
     case SORT_FIELD_LENGTH:
       preparedGoods.sort((a, b) => a.length - b.length);
       break;
-
     default:
       break;
   }
