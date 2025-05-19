@@ -21,15 +21,10 @@ const SORT_FIELD_LENGTH = 'length';
 function getPreparedGoods(goods, { sortField, reverse }) {
   const preparedGoods = [...goods];
 
-  switch (sortField) {
-    case SORT_FIELD_ALPHABETICALLY:
-      preparedGoods.sort((a, b) => a.localeCompare(b));
-      break;
-    case SORT_FIELD_LENGTH:
-      preparedGoods.sort((a, b) => a.length - b.length);
-      break;
-    default:
-      break;
+  if (sortField === SORT_FIELD_ALPHABETICALLY) {
+    preparedGoods.sort((a, b) => a.localeCompare(b));
+  } else if (sortField === SORT_FIELD_LENGTH) {
+    preparedGoods.sort((a, b) => a.length - b.length);
   }
 
   if (reverse) {
