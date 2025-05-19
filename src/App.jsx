@@ -23,7 +23,9 @@ function getPreparedGoods(goods, { sortField, reverse }) {
 
   if (sortField === SORT_FIELD_ALPHABETICALLY) {
     preparedGoods.sort((a, b) => a.localeCompare(b));
-  } else if (sortField === SORT_FIELD_LENGTH) {
+  }
+
+  if (sortField === SORT_FIELD_LENGTH) {
     preparedGoods.sort((a, b) => a.length - b.length);
   }
 
