@@ -19,6 +19,10 @@ const SORT_FIELD_ALPHABETICALLY = 'alphabetically';
 const SORT_FIELD_LENGTH = 'length';
 
 function getPreparedGoods(goods, { sortField, reverse }) {
+  if (!sortField) {
+    return reverse ? [...goods].reverse() : [...goods];
+  }
+
   const preparedGoods = [...goods];
 
   if (sortField === SORT_FIELD_ALPHABETICALLY) {
